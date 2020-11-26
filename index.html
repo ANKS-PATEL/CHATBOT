@@ -1,0 +1,596 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>UX and UI</title>
+    <!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	<!-- Google Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+	<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
+	<!-- Bootstrap core CSS -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+	<script type="481de412aa3af7640c238c6e-text/javascript">
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-175151708-1');
+	</script>
+	<script type="481de412aa3af7640c238c6e-text/javascript">
+	  window.watsonAssistantChatOptions = {
+	      integrationID: "2f668cdc-58ed-4d01-a69d-4f2933139bd2", // The ID of this integration.
+	      region: "eu-gb", // The region your integration is hosted in.
+	      serviceInstanceID: "40acc1f5-b433-4ff9-b938-ab4a8ec4209d", // The ID of your service instance.
+	      onLoad: function(instance) { instance.render(); }
+	    };
+	  setTimeout(function(){
+	    const t=document.createElement('script');
+	    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+	    document.head.appendChild(t);
+	  });
+	</script>
+  
+</head>
+<style type="text/css">
+	.f-style{
+		flex-direction: row
+	}
+	.sizing{
+			width: 75%;
+		}
+	@media (max-width: 450px){
+		.f-style{
+			flex-direction: column;
+		}
+		.sizing{
+			width: 100%;
+		}
+		
+	}
+	@media (min-width: 1050px){
+		#postit{
+			width: 40%;
+			height: 60%;
+		}
+		
+	}
+
+	.main-timeline {
+	  overflow: hidden;
+	  position: inherit;
+	}	
+	.main-timeline:before {
+	  content: "";
+	  width: 5px;
+	  height: 90%;
+	  background: #333;
+	  position: absolute;
+	  top: 50px;
+	  left: 50%;
+	  transform: translateX(-50%);
+	}
+	/*.main-timeline:after {
+		animation: fadeInDown;
+	}*/
+	.main-timeline .timeline-content:before, .timeline:before {
+	  top: 50%;
+	  transform: translateY(-50%);
+	  content: "";
+	}
+	.main-timeline .timeline {
+	  width: 50%;
+	  padding-left: 100px;
+	  float: right;
+	  position: relative;
+	}
+
+	.main-timeline .timeline:before {
+	  width: 20px;
+	  height: 20px;
+	  border-radius: 50%;
+	  background: #fff;
+	  border: 5px solid #333;
+	  position: absolute;
+	  left: -10px;
+	}
+
+	.main-timeline .timeline-content {
+	  display: block;
+	  padding-left: 150px;
+	  position: relative;
+	}
+
+	.main-timeline .timeline-content:before {
+	  width: 90px;
+	  height: 10px;
+	  border-top: 7px dotted #333;
+	  position: absolute;
+	  left: -92px;
+	}
+
+	.main-timeline .year {
+	  display: inline-block;
+	  width: 120px;
+	  height: 120px;
+	  line-height: 100px;
+	  border-radius: 50%;
+	  border: 10px solid #f54957;
+	  font-size: 30px;
+	  color: #f54957;
+	  text-align: center;
+	  box-shadow: inset 0 0 10px rgba(0, 0, 0, .4);
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	}
+
+	.main-timeline .year:before {
+	  content: "";
+	  border-left: 20px solid #f54957;
+	  border-top: 10px solid transparent;
+	  border-bottom: 10px solid transparent;
+	  position: absolute;
+	  bottom: -13px;
+	  right: 0;
+	  transform: rotate(45deg);
+	}
+
+	.main-timeline .inner-content {
+	  padding: 20px 0;
+	}
+
+	.main-timeline .title {
+	  font-size: 20px;
+	  font-weight: 600;
+	  color: #111111;
+	  text-transform: uppercase;
+	  margin: 0 0 5px;
+	}
+
+	.main-timeline .description {
+	  font-size: 14px;
+	  color: #6f6f6f;
+	  margin: 0 0 5px;
+	}
+
+	.main-timeline .timeline:nth-child(2n) {
+	  padding: 0 100px 0 0;
+	}
+
+	.main-timeline .timeline:nth-child(2n) .timeline-content:before, .main-timeline .timeline:nth-child(2n) .year, .main-timeline .timeline:nth-child(2n):before {
+	  left: auto;
+	  right: -10px;
+	}
+	.main-timeline .timeline:nth-child(2n) .timeline-content {
+	  padding: 0 150px 0 0;
+	}
+
+	.main-timeline .timeline:nth-child(2n) .timeline-content:before {
+	  right: -92px;
+	}
+
+	.main-timeline .timeline:nth-child(2n) .year {
+	  right: 0;
+	}
+
+	.main-timeline .timeline:nth-child(2n) .year:before {
+	  right: auto;
+	  left: 0;
+	  border-left: none;
+	  border-right: 20px solid #f54957;
+	  transform: rotate(-45deg);
+	}
+
+	.main-timeline .timeline:nth-child(2n) {
+	  margin-top: 110px;
+	}
+
+	.main-timeline .timeline:nth-child(odd) {
+	  margin: -80px 0 0;
+	}
+
+	.main-timeline .timeline:nth-child(even) {
+	  margin-bottom: 80px;
+	}
+
+	.main-timeline .timeline:first-child, .main-timeline4 .timeline:last-child:nth-child(even) {
+	  margin: 0;
+	}
+
+	@keyframes fadeInDown {
+	   0% {
+	      opacity: 0;
+	      transform: translateY(-20px);
+	   }
+	   100% {
+	      opacity: 1;
+	      transform: translateY(0);
+	   }
+	} 
+</style>
+<body>
+
+	<nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1020" id="Home">
+	  <a class="navbar-brand" href="#">Demo</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+	    aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item">
+	        <a class="nav-link" href="#Home">Home
+	          <span class="sr-only">(current)</span>
+	        </a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#Differences">Differences</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#Heuristic">Heuristic</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#Trends">Trends</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#Reference">Reference</a>
+	      </li>
+	      <!-- <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-555" data-toggle="dropdown"
+	          aria-haspopup="true" aria-expanded="false">Dropdown
+	        </a>
+	        <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-555">
+	          <a class="dropdown-item" href="#">Action</a>
+	          <a class="dropdown-item" href="#">Another action</a>
+	          <a class="dropdown-item" href="#">Something else here</a>
+	        </div>
+	      </li> -->
+	    </ul>
+	  </div>
+	</nav>
+
+
+
+    <div class="text-center" style="text-align: center;height: 100%;width: 100%;">
+    	<video playsinline autoplay muted loop style=" height: 100%;width: 100%">
+		  <source src="Spring.mp4" type="video/mp4" >
+		</video>
+        <h2 class="display-1 text-center text-muted" style="position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);">UX &amp; UI</h2>
+	</div>
+
+
+
+
+	<div class="text-right p-5 bg-primary animated wow fadeInUp slow" id="Differences">
+		<h2 class="display-2" style="color: #ffffff">
+			Differences	
+		</h2>
+		
+	</div>
+
+    <div class="container-fluid d-flex mt-5 mb-5 f-style" >
+    	<div class="card animated wow fadeIn slow" id="postit">
+			<img class="img img-fluid card-img wow animated fadeInUp slow" src="postit.png" >
+			<div class="card-img-overlay" style="font-family:'Merienda One';">
+				<br><br>
+				<br>
+				<h1 class="card-title wow animated fadeInUp slow" style="margin-left: 12%;">UX Elements</h1>
+				<br>
+				<p class="card-text wow animated fadeInUp slow" style="margin-left: 5.5%;">The Surface<span class="small">-Visual Design, UI</span></p>
+				<p class="card-text wow animated fadeInUp slow" style="margin-left: 7%;">The Structure<span class="small">-Architecture, Defining content</span></p>
+				<p class="card-text wow animated fadeInUp slow" style="margin-left: 8.75%;">The Scope<span class="small">-Funtionality, Usefullness</span></p>
+				<p class="card-text wow animated fadeInUp slow" style="margin-left: 9%;">The Stratergy<span class="small">-Business requirments, User Needs</span></p>
+			</div>
+		</div>
+
+		<div class="card w-50 ml-3 mr-3 animated wow fadeIn slow">
+		  <div class="card-body">
+	  		<h3 class="card-title text-center p-4 animated wow fadeInUp slow">UX <span class="muted">vs</span> UI</h3>
+	  		
+	  		<blockquote class="pl-5 ml-2 blockquote animated wow fadeInUp slow" style="border-left: 10px solid #eee;">
+			  <p>“User Experience (UX) and User Interface (UI) are some of the most confused and misused terms in our field. A UI without UX is like a painter slapping paint onto a canvas without thought; while UX without UI is like the frame of a sculpture with no paper mache on it. A great product experience starts with UX followed by UI. Both are essential for the product’s success.”</p>
+			</blockquote>
+		  </div>
+		</div>
+
+    	<div class="card animated wow fadeIn slow" id="postit" style="border: none; float: right;">
+			<img class="img img-fluid card-img animated wow fadeInUp slow" src="postitflip.png" >
+			<div class="card-img-overlay" style="font-family:'Merienda One';">
+				<br><br>
+				<br>
+				<h1 class="card-title wow animated fadeInUp slow" style="margin-left: 20%;">UI Elements</h1>
+				<br>
+				<p class="card-text wow animated fadeInUp slow" style="margin-left: 13%;">Input Controlers<span class="small">-buttons, toggles, text fields</span></p>
+				<p class="card-text wow animated fadeInUp slow" style="margin-left: 12%;">Navigational Components<span class="small">-slider, search field, pagination</span></p>
+				<p class="card-text wow animated fadeInUp slow" style="margin-left: 10%;">Informational Components<span class="small">-tooltip, progress bar</span></p>
+				<p class="card-text wow animated fadeInUp slow" style="margin-left: 9.25%;">Containers<span class="small">-Accordion</span></p>
+			</div>
+		</div>
+    </div>
+
+    <div class="text-right p-5 bg-primary animated wow fadeInUp slow" id="Heuristic">
+		<h2 class="display-2" style="color: #ffffff">
+			UI Heuristic
+		</h2>
+	</div>
+		<div class="container p-5">
+		    <div class="col-md-12">
+
+		        <div class="main-timeline">
+		            <div class="timeline animated wow fadeInup">
+		                <a class="timeline-content">
+		                    <span class="year">1</span>
+		                    <div class="inner-content">
+		                        <h3 class="title">Strive for Consistency</h3>
+		                        <p class="description">
+		                            In this instance, UI designers should ensure that any prompts, dialogue boxes, and menus should all share the same characteristics. The same is to be said of colour, typography and layout.
+		                        </p>
+		                    </div>
+		                </a>
+		            </div>	
+		            <div class="timeline animated wow fadeInup">
+		                <a class="timeline-content">
+		                    <span class="year">2</span>
+		                    <div class="inner-content">
+		                        <h3 class="title">Keep Users in Control</h3>
+		                        <p class="description">
+		                            So when designing user interfaces, reduce the number of surprises that a user may encounter.
+		                        </p>
+		                    </div>
+		                </a>
+		            </div>	
+		            <div class="timeline animated wow fadeInup">
+		                <a class="timeline-content">
+		                    <span class="year">3</span>
+		                    <div class="inner-content">
+		                        <h3 class="title">Reduce Users’ Minimum Steps</h3>
+		                        <p class="description">
+		                            UI designers should reduce a user’s minimum steps as much as possible.
+		                        </p>
+		                    </div>
+		                </a>
+		            </div>
+		            <div class="timeline animated wow fadeInup">
+		                <a class="timeline-content">
+		                    <span class="year">4</span>
+		                    <div class="inner-content">
+		                        <h3 class="title">Users Should Know Where They Are</h3>
+		                        <p class="description">
+		                            Just like most streets and roads have signs with their name to let pedestrians know where they are, so must user interfaces.
+		                        </p>
+		                    </div>
+		                </a>
+		            </div>	
+		            <div class="timeline animated wow fadeInup">
+		                <a class="timeline-content">
+		                    <span class="year">5</span>
+		                    <div class="inner-content">
+		                        <h3 class="title">Avoid Obtuse Language</h3>
+		                        <p class="description">
+		                            Any website or mobile app should speak to the users in language and terminology they understand.
+		                        </p>
+		                    </div>
+		                </a>
+		            </div>
+		            <div class="timeline animated wow fadeInup">
+		                <a class="timeline-content">
+		                    <span class="year">6</span>
+		                    <div class="inner-content">
+		                        <h3 class="title">Recognition rather than recall</h3>
+		                        <p class="description">
+		                            Minimize the user's memory load by making elements, actions, and options visible. The user should not have to remember information from one part of the interface to another.
+		                        </p>
+		                    </div>
+		                </a>
+		            </div>
+		            <div class="timeline animated wow fadeInup">
+		                <a class="timeline-content">
+		                    <span class="year">7</span>
+		                    <div class="inner-content">
+		                        <h3 class="title">Present New Information with Meaningful Aids to Interpretation</h3>
+		                        <p class="description">
+		                            This means employing metaphor where possible (although avoid being too esoteric) and familiar frameworks. Metaphor can be used to make the unfamiliar, familiar. 
+		                        </p>
+		                    </div>
+		                </a>
+		            </div>
+		            <div class="timeline animated wow fadeInup">
+		                <a class="timeline-content">
+		                    <span class="year">8</span>
+		                    <div class="inner-content">
+		                        <h3 class="title">Aesthetic and minimalist design</h3>
+		                        <p class="description">
+		                            Interfaces should not contain information which is irrelevant or rarely needed. Every extra unit of information in an interface competes with the relevant units of information and diminishes their relative visibility.
+		                        </p>
+		                    </div>
+		                </a>
+		            </div>
+		            <div class="timeline animated wow fadeInup">
+		                <a class="timeline-content">
+		                    <span class="year">9</span>
+		                    <div class="inner-content">
+		                        <h3 class="title">Help users recognize, diagnose, and recover from errors</h3>
+		                        <p class="description">
+		                            Error messages should be expressed in plain language (no error codes), precisely indicate the problem, and constructively suggest a solution.
+		                        </p>
+		                    </div>
+		                </a>
+		            </div>
+		            <div class="timeline animated wow fadeInup">
+		                <a class="timeline-content">
+		                    <span class="year">10</span>
+		                    <div class="inner-content">
+		                        <h3 class="title">Help and documentation</h3>
+		                        <p class="description">
+		                            It’s best if the system doesn’t need any additional explanation. However, it may be necessary to provide documentation to help users understand how to complete their tasks.
+		                        </p>
+		                    </div>
+		                </a>
+		            </div>
+		        </div>
+
+		    </div>
+		</div>
+
+	<div class="text-right p-5 bg-primary animated wow fadeInUp slow" id="Trends">
+		<h2 class="display-2" style="color: #ffffff">
+			Trends
+		</h2>
+	</div>
+
+	<div id="carousel-example-2" class="carousel slide carousel-fade p-5 animated wow fadeIn slow" data-ride="carousel">
+	  <ol class="carousel-indicators">
+	    <li data-target="#carousel-example-2" data-slide-to="1" class="active"></li>
+	    <li data-target="#carousel-example-2" data-slide-to="2"></li>
+	    <li data-target="#carousel-example-2" data-slide-to="3"></li>
+	    <li data-target="#carousel-example-2" data-slide-to="4"></li>
+	    <li data-target="#carousel-example-2" data-slide-to="5"></li>
+	    <li data-target="#carousel-example-2" data-slide-to="6"></li>
+	    <li data-target="#carousel-example-2" data-slide-to="7"></li>
+	    <li data-target="#carousel-example-2" data-slide-to="8"></li>
+	  </ol>
+	  <div class="carousel-inner" role="listbox" >
+	    <div class="carousel-item active">
+	      <div class="view">
+	        <img class="d-block w-50 m-auto" src="Car1.gif"
+	          alt="First slide">
+	        <div class="mask rgba-black-slight"></div>
+	      </div>
+	      <div class="carousel-caption">
+	        <h3 class="h3-responsive" >Animated Illustrations</h3>
+	      </div>
+	    </div>
+	    <div class="carousel-item">
+	      <div class="view">
+	        <img class="d-block w-50 m-auto" src="Car2.gif"
+	          alt="Second slide">
+	        <div class="mask rgba-black-slight"></div>
+	      </div>
+	      <div class="carousel-caption">
+	        <h3 class="h3-responsive">Microinteractions </h3>
+	      </div>
+	    </div>
+	    <div class="carousel-item">
+	      <div class="view">
+	        <img class="d-block w-50 m-auto" src="Car3.gif"
+	          alt="Third slide">
+	        <div class="mask rgba-black-slight"></div>
+	      </div>
+	      <div class="carousel-caption">
+	        <h3 class="h3-responsive">3D graphic</h3>
+	      </div>
+	    </div>
+	    <div class="carousel-item">
+	      <div class="view">
+	        <img class="d-block w-50 m-auto" src="Car4.gif"
+	          alt="Third slide">
+	        <div class="mask rgba-black-slight"></div>
+	      </div>
+	      <div class="carousel-caption">
+	        <h3 class="h3-responsive">Virtual Reality</h3>
+	      </div>
+	    </div>
+	    <div class="carousel-item">
+	      <div class="view">
+	        <img class="d-block w-50 m-auto" src="Car5.gif"
+	          alt="Third slide">
+	        <div class="mask rgba-black-slight"></div>
+	      </div>
+	      <div class="carousel-caption">
+	        <h3 class="h3-responsive">Augmented reality</h3>
+	      </div>
+	    </div>
+	    <div class="carousel-item">
+	      <div class="view">
+	        <img class="d-block w-50 m-auto" src="Car6.gif"
+	          alt="Third slide">
+	        <div class="mask rgba-black-slight"></div>
+	      </div>
+	      <div class="carousel-caption">
+	        <h3 class="h3-responsive">Neumorphism</h3>
+	      </div>
+	    </div>
+	    <div class="carousel-item">
+	      <div class="view">
+	        <img class="d-block w-50 m-auto" src="Car7.gif"
+	          alt="Third slide">
+	        <div class="mask rgba-black-slight"></div>
+	      </div>
+	      <div class="carousel-caption">
+	        <h3 class="h3-responsive">Asymmetrical layouts</h3>
+	      </div>
+	    </div>
+	    <div class="carousel-item">
+	      <div class="view">
+	        <img class="d-block w-50 m-auto" src="Car8.gif"
+	          alt="Third slide">
+	        <div class="mask rgba-black-slight"></div>
+	      </div>
+	      <div class="carousel-caption">
+	        <h3 class="h3-responsive">Storytelling </h3>
+	      </div>
+	    </div>
+	  </div>
+	  <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
+	    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+	    <span class="sr-only">Previous</span>
+	  </a>
+	  <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
+	    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+	    <span class="sr-only">Next</span>
+	  </a>
+	</div>
+
+	<div class="text-right p-5 bg-primary animated wow fadeInUp slow" id="Reference">
+		<h2 class="display-2" style="color: #ffffff">
+			Good Reference Website
+		</h2>
+	</div>
+  <div class="container-fluid text-center text-md-left">
+    <div class="row p-5">
+      <div class="col-md-12 mt-md-0 mt-3">
+        	<ol>
+        		<li class="h2 animated wow fadeInUp slow">
+        			<a href="https://niice.co/search/ux" class="h2">NIICE</a>
+        		</li>
+        		<li class="h2 animated wow fadeInUp slow">
+        			<a href="https://www.awwwards.com/" class="h2">Awwwards</a>
+        		</li>
+        		<li class="h2 animated wow fadeInUp slow">
+        			<a href="https://www.webdesign-inspiration.com/" class="h2">Web Design Inspiration</a>
+        		</li>
+        	</ol>
+      </div>
+    </div>
+  </div>
+
+  <footer class="page-footer font-small bg-dark">
+
+	  <div class="footer-copyright text-center py-3">Made with
+	    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+	  </div>
+
+	</footer>
+
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+
+	<script type="text/javascript">
+	$( document ).ready(function() {
+	  new WOW().init();
+		});
+	</script>
+ 
+</body>
+
+</html>
